@@ -25,6 +25,19 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            animation: backgroundFade 10s linear infinite; /* 添加渐变动画 */
+        }
+
+        @keyframes backgroundFade {
+            0% {
+                opacity: 1; /* 开始时不透明 */
+            }
+            50% {
+                opacity: 0; /* 中间透明 */
+            }
+            100% {
+                opacity: 1; /* 结束时不透明 */
+            }
         }
 
         .container {
@@ -178,19 +191,7 @@
             document.querySelector('.background-image').style.backgroundImage = backgrounds[currentBackground];
         }
 
-        window.addEventListener('scroll', () => {
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.body.scrollHeight;
-            const scrollPosition = window.scrollY;
-
-            if (scrollPosition < windowHeight) {
-                currentBackground = 0;
-            } else {
-                currentBackground = 1;
-            }
-
-            document.querySelector('.background-image').style.backgroundImage = backgrounds[currentBackground];
-        });
+        // 移除原有的背景切换逻辑，使用CSS动画实现渐变
     </script>
 </body>
 </html>
