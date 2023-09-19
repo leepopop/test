@@ -12,18 +12,14 @@
             position: relative;
         }
 
+        /* 设置初始背景图片和覆盖层 */
         body {
-/*            background-image: url('https://raw.githubusercontent.com/leepopop/test/main/imgs/bg01.JPG');
-            background-size: cover;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-position: center;
-            transition: background-image 1s ease-in-out;*/
-
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             position: relative;
+            background-color: #000; /* 设置背景为黑色 */
+            overflow: hidden; /* 隐藏超出视窗宽度的部分 */
             background-image: url('https://raw.githubusercontent.com/leepopop/test/main/imgs/bg01.JPG');
             background-size: cover; /* 宽度充满整个屏幕，高度自动调整 */
             background-repeat: no-repeat;
@@ -63,7 +59,7 @@
             background: transparent !important;
             border: 0;
             width: 100%;
-/*            height: 90vh;*/
+            height: 100%;
             margin: 0 auto;
         }
 
