@@ -40,7 +40,7 @@
         @media (max-width: 768px) {
             h2 {
                 display: block; /* 垂直排列 */
-            }
+            }   
         }
         /* 嵌入 Google 表单的样式示例 */
         iframe {
@@ -133,5 +133,34 @@
             }
         });
     </script>
+    <script>
+    // JavaScript代码可以用于处理背景图片切换
+    const backgrounds = [
+        'url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg)',
+        'url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_52683-60691.jpg?w=2000)'
+    ];
+    let currentBackground = 0;
+
+    function changeBackground() {
+        currentBackground = (currentBackground + 1) % backgrounds.length;
+        document.body.style.backgroundImage = backgrounds[currentBackground];
+    }
+
+    // 在页面滚动时触发背景切换
+    window.addEventListener('scroll', () => {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.body.scrollHeight;
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition < windowHeight) { /* 页面最上面时 */
+            currentBackground = 0; // 切换到图片1
+        } else if (scrollPosition > (documentHeight - windowHeight)) { /* 页面最下面时 */
+            currentBackground = 1; // 切换到图片2
+        }
+
+        document.body.style.backgroundImage = backgrounds[currentBackground];
+    });
+</script>
+
 </body>
 </html>
