@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的单页网站</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('背景图片的URL');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #fff;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 24px;
+        }
+
+        /* 添加样式以嵌入 iframe */
+        iframe {
+            width: 640px;
+            height: 1015px;
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎来到我的单页网站</h1>
+        <p>这是一个简单的示例</p>
+        
+        <!-- 在此处嵌入 Google Forms 表单 -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdcfYS9wC-XmtMJBZ4IOJIbm5_tGR4wXeW_UGfAZN_JK74SGg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+    </div>
+</body>
+</html>
