@@ -28,7 +28,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.1); /* 添加白色覆盖层，10%不透明度 */
+/*            background-color: rgba(255, 255, 255, 0.1); /* 添加白色覆盖层，10%不透明度 */*/
         }
 
         /* 添加其他样式和响应式布局样式 */
@@ -73,7 +73,7 @@
         }
 
         .feature {
-            flex-basis: calc(33.33% - 20px); /* 三列布局，每列宽度为33.33%减去间隙 */
+            flex-basis: calc(30.33% - 60px); /* 三列布局，每列宽度为33.33%减去间隙 */
             text-align: center;
             margin: 10px;
         }
@@ -101,7 +101,7 @@
     <div class="container">
         <h1>邀請您一起分享我們的喜悅，為 Eden 的到來祝福。</h1>
         <h2>- Adam 程昱斌 & Casey 李悅寧</h2>
-        
+        <div style="height: 30vh;"></div>
         <!-- 嵌入 Google 表单（修改表单外观） -->
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdcfYS9wC-XmtMJBZ4IOJIbm5_tGR4wXeW_UGfAZN_JK74SGg/viewform?embedded=true" frameborder="0"></iframe>
         
@@ -150,7 +150,7 @@
             const documentHeight = document.body.scrollHeight;
             const scrollPosition = window.scrollY;
 
-            if (scrollPosition < windowHeight - 100) { /* 页面最上面时 */
+            if (scrollPosition < windowHeight) { /* 页面最上面时 */
                 currentBackground = 0; // 切换到图片1
             } else { /* 页面最下面时 */
                 currentBackground = 1; // 切换到图片2
