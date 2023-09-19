@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的单页网站</title>
+    <title>我的响应式单页网站</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-image: url('背景图片的URL');
-            background-size: cover;
-            background-position: center;
             font-family: Arial, sans-serif;
-            text-align: center;
-            color: #fff;
         }
 
+        /* 设置初始背景图片 */
+        body {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2838/2838912.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            transition: background-image 1s ease-in-out;
+        }
+
+        /* 添加其他样式和响应式布局样式 */
+        /* 根据需要，您可以使用CSS媒体查询来创建不同的样式 */
+        
+        /* 样式示例 */
         .container {
-            background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
-            border-radius: 10px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
         }
 
         h1 {
@@ -34,23 +38,84 @@
             font-size: 24px;
         }
 
-        /* 添加样式以嵌入 iframe */
+        /* 嵌入 Google 表单的样式示例 */
         iframe {
-            width: 640px;
-            height: 1015px;
             border: 0;
-            margin: 0;
-            padding: 0;
+            width: 100%;
+        }
+
+        /* 添加其他样式，根据需要调整 */
+
+        /* 样式示例：手機時上下排列，電腦時左右排列的小標題和圖片 */
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .feature img {
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+
+        /* 样式示例：Footer 样式 */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>欢迎来到我的单页网站</h1>
-        <p>这是一个简单的示例</p>
+        <h1>网站标题</h1>
+        <p>网站简介</p>
         
-        <!-- 在此处嵌入 Google Forms 表单 -->
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdcfYS9wC-XmtMJBZ4IOJIbm5_tGR4wXeW_UGfAZN_JK74SGg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+        <!-- 嵌入 Google 表单（修改表单外观） -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdcfYS9wC-XmtMJBZ4IOJIbm5_tGR4wXeW_UGfAZN_JK74SGg/viewform?embedded=true" frameborder="0">載入中…</iframe>
+        
+        <h2>副标题</h2>
+        
+        <!-- 示例：三组小标题和图片 -->
+        <div class="feature">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png" alt="图像1">
+            <h3>小标题1</h3>
+        </div>
+
+        <div class="feature">
+            <img src="https://cdn-icons-png.flaticon.com/512/858/858962.png" alt="图像2">
+            <h3>小标题2</h3>
+        </div>
+
+        <div class="feature">
+            <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="图像3">
+            <h3>小标题3</h3>
+        </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2023 您的网站名称
+    </footer>
+
+    <script>
+        // JavaScript代码可以用于处理背景图片切换
+        const backgrounds = ['url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg)', 'url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_52683-60691.jpg?w=2000)', 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTFetyj6GhDcn7Roq8IPHEGEj-oqlEeM1EoC9PAXgltks4UOgcnpK0nMBUtOUnCwcDAlI&usqp=CAU)'];
+        let currentBackground = 0;
+
+        function changeBackground() {
+            currentBackground = (currentBackground + 1) % backgrounds.length;
+            document.body.style.backgroundImage = backgrounds[currentBackground];
+        }
+
+        // 在页面滚动时触发背景切换
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                changeBackground();
+            }
+        });
+    </script>
 </body>
 </html>
