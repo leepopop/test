@@ -124,32 +124,29 @@
     </footer>
 
     <script>
-        const backgroundImages = [
-            'https://raw.githubusercontent.com/leepopop/test/main/imgs/bg01.JPG',
-            'https://raw.githubusercontent.com/leepopop/test/main/imgs/bg02.JPG'
+        const backgrounds = [
+            'url(https://raw.githubusercontent.com/leepopop/test/main/imgs/bg01.JPG)',
+            'url(https://raw.githubusercontent.com/leepopop/test/main/imgs/bg02.JPG)'
         ];
-
-        let currentBackgroundIndex = 0;
-        const backgroundElement = document.querySelector('.background-image');
+        let currentBackground = 0;
 
         function changeBackground() {
-            currentBackgroundIndex = (currentBackgroundIndex + 1) % backgroundImages.length;
-            backgroundElement.style.opacity = 0;
-            setTimeout(() => {
-                backgroundElement.style.backgroundImage = `url('${backgroundImages[currentBackgroundIndex]}')`;
-                setTimeout(() => {
-                    backgroundElement.style.opacity = 1;
-                }, 500);
-            }, 500);
+            currentBackground = (currentBackground + 1) % backgrounds.length;
+            document.body.style.backgroundImage = backgrounds[currentBackground];
         }
 
         window.addEventListener('scroll', () => {
             const windowHeight = window.innerHeight;
+            const documentHeight = document.body.scrollHeight;
             const scrollPosition = window.scrollY;
 
             if (scrollPosition < windowHeight) {
-                changeBackground();
+                currentBackground = 0;
+            } else {
+                currentBackground = 1;
             }
+
+            document.body.style.backgroundImage = backgrounds[currentBackground];
         });
     </script>
 </body>
