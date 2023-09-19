@@ -9,9 +9,10 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            position: relative; /* 添加相对定位 */
         }
 
-        /* 设置初始背景图片 */
+        /* 设置初始背景图片和覆盖层 */
         body {
             background-image: url('https://raw.githubusercontent.com/leepopop/test/main/imgs/bg01.JPG');
             background-size: cover;
@@ -20,14 +21,24 @@
             transition: background-image 1s ease-in-out;
         }
 
+        /* 覆盖层 */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1); /* 添加白色覆盖层，10%不透明度 */
+        }
+
         /* 添加其他样式和响应式布局样式 */
         /* 根据需要，您可以使用CSS媒体查询来创建不同的样式 */
-        
+
         /* 样式示例 */
         .container {
             padding: 20px;
             text-align: center;
-            color: #fff;
+            color: #3498db; /* 蓝色系文字颜色 */
         }
 
         h1 {
@@ -71,22 +82,24 @@
             max-width: 100%;
             margin-bottom: 10px;
             border-radius: 50%; /* 将图片修饰成正圆形 */
-            border: 4px solid #fff; /* 增加立体感的边框 */
+            border: 4px solid #3498db; /* 蓝色系边框 */
         }
 
         /* 样式示例：Footer 样式 */
         footer {
             background-color: #333;
-            color: #fff;
+            color: #3498db; /* 蓝色系文字颜色 */
             text-align: center;
             padding: 10px;
         }
     </style>
 </head>
 <body>
+    <!-- 覆盖层 -->
+    <div class="overlay"></div>
+
     <div class="container">
-        <h1>网站标题</h1>
-        <h1>邀請您一起分享我們的喜悅，為 Aaron 吳卓恩的到來祝福。</h1>
+        <h1>邀請您一起分享我們的喜悅，為 Eden 的到來祝福。</h1>
         <h2>- Adam 程昱斌 & Casey 李悅寧</h2>
         
         <!-- 嵌入 Google 表单（修改表单外观） -->
@@ -115,7 +128,7 @@
 
     <!-- Footer -->
     <footer>
-        &copy; 未來再請叔叔、阿姨、哥哥、姊姊們多多指教～
+        未來再請叔叔、阿姨、哥哥、姊姊們多多指教～
     </footer>
 
     <script>
@@ -137,9 +150,9 @@
             const documentHeight = document.body.scrollHeight;
             const scrollPosition = window.scrollY;
 
-            if (scrollPosition < windowHeight) { /* 页面最上面时 */
+            if (scrollPosition < windowHeight - 100) { /* 页面最上面时 */
                 currentBackground = 0; // 切换到图片1
-            } else if (scrollPosition + windowHeight > (documentHeight - 500)) { /* 页面最下面时 */
+            } else { /* 页面最下面时 */
                 currentBackground = 1; // 切换到图片2
             }
 
@@ -147,4 +160,4 @@
         });
     </script>
 </body>
-</html>
+</html
