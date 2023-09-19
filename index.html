@@ -41,17 +41,24 @@
         /* 嵌入 Google 表单的样式示例 */
         iframe {
             border: 0;
-            width: 100%;
+            width: 80%; /* 表单宽度为80%屏幕宽度 */
+            margin: 0 auto; /* 水平居中 */
         }
 
         /* 添加其他样式，根据需要调整 */
 
         /* 样式示例：手機時上下排列，電腦時左右排列的小標題和圖片 */
-        .feature {
+        .feature-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap; /* 自动换行 */
+            justify-content: space-around; /* 水平居中 */
             margin: 20px 0;
+        }
+
+        .feature {
+            flex-basis: calc(33.33% - 20px); /* 三列布局，每列宽度为33.33%减去间隙 */
+            text-align: center;
+            margin: 10px;
         }
 
         .feature img {
@@ -79,19 +86,21 @@
         <h2>副标题</h2>
         
         <!-- 示例：三组小标题和图片 -->
-        <div class="feature">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png" alt="图像1">
-            <h3>小标题1</h3>
-        </div>
+        <div class="feature-container">
+            <div class="feature">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png" alt="图像1">
+                <h3>小标题1</h3>
+            </div>
 
-        <div class="feature">
-            <img src="https://cdn-icons-png.flaticon.com/512/858/858962.png" alt="图像2">
-            <h3>小标题2</h3>
-        </div>
+            <div class="feature">
+                <img src="https://cdn-icons-png.flaticon.com/512/858/858962.png" alt="图像2">
+                <h3>小标题2</h3>
+            </div>
 
-        <div class="feature">
-            <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="图像3">
-            <h3>小标题3</h3>
+            <div class="feature">
+                <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="图像3">
+                <h3>小标题3</h3>
+            </div>
         </div>
     </div>
 
@@ -112,7 +121,7 @@
 
         // 在页面滚动时触发背景切换
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
+            if (window.scrollY > (document.body.scrollHeight / 3)) { /* 滚动三分之一页面高度时切换背景 */
                 changeBackground();
             }
         });
